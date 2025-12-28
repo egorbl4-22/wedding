@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свадебное приглашение</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Chocolate Silk Background -->
+    <div class="animated-background">
+        <img src="fon.gif" class="silk-gif" alt="Chocolate silk texture">
+        <div class="silk-overlay"></div>
+        <div class="silk-shine"></div>
+    </div>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="big-date fly-up">6 июня 2026</h1>
+                <div class="names fly-left">
+                    <h2 class="bride-name">Василий</h2>
+                    <span class="and">и</span>
+                    <h2 class="groom-name">Светлана</h2>
+                </div>
+                <div class="hero-photo fly-up">
+                    <img src="vasya-i-sveta.jpg" alt="Василий и Светлана" class="couple-photo">
+                </div>
+                <div class="countdown-timer" id="countdown">
+                    <div class="timer-item">
+                        <span class="timer-number" id="days">0</span>
+                        <span class="timer-label">дней</span>
+                    </div>
+                    <div class="timer-separator">:</div>
+                    <div class="timer-item">
+                        <span class="timer-number" id="hours">0</span>
+                        <span class="timer-label">часов</span>
+                    </div>
+                    <div class="timer-separator">:</div>
+                    <div class="timer-item">
+                        <span class="timer-number" id="minutes">0</span>
+                        <span class="timer-label">минут</span>
+                    </div>
+                    <div class="timer-separator">:</div>
+                    <div class="timer-item">
+                        <span class="timer-number" id="seconds">0</span>
+                        <span class="timer-label">секунд</span>
+                    </div>
+                </div>
+                <p class="invitation-text">Мы будем рады разделить с вами радость неповторимого для нас дня - дня нашей свадьбы! Приглашаем присоединиться к нашему празднику и украсить его своим присутствием!</p>
+            </div>
+            <div class="decorative-line"></div>
+        </section>
+
+        <!-- Details Section -->
+        <section class="details big-details">
+            <div class="event-row fly-up" style="animation-delay:0.2s;">
+                <span class="event-time">15:30</span>
+                <span class="event-label">Сбор гостей</span>
+            </div>
+            <div class="event-row fly-left" style="animation-delay:0.4s;">
+                <span class="event-time">16:00</span>
+                <span class="event-label">Церемония</span>
+            </div>
+            <div class="event-row fly-right" style="animation-delay:0.6s;">
+                <span class="event-time">17:00</span>
+                <span class="event-label">Банкет</span>
+            </div>
+            <div class="event-row fly-up" style="animation-delay:0.8s;">
+                <span class="event-time">00:00</span>
+                <span class="event-label">Финал</span>
+            </div>
+        </section>
+
+        <!-- Love Quote Section -->
+        <section class="quote-section">
+            <p class="quote">"Любовь - это не о том, сколько дней, месяцев или лет вы вместе. 
+            Любовь - это о том, как сильно вы любите друг друга каждый день."</p>
+        </section>
+
+        <!-- RSVP Section -->
+        <section class="rsvp-section">
+            <div class="rsvp-decoration-left">❦</div>
+            <div class="rsvp-decoration-right">❦</div>
+            <h2 class="rsvp-title">Присоединяйтесь к нам</h2>
+            <p class="rsvp-text">Мы будем рады разделить с вами этот особенный день.</p>
+            <button class="rsvp-button">Подтвердить присутствие</button>
+        </section>
+
+        <!-- Dress Code Section -->
+        <section class="dresscode-section fly-left" style="animation-delay:1.2s;">
+            <h2 class="dresscode-title">Дресс-код</h2>
+            <p class="dresscode-text">Чтобы воспоминания о свадьбе были положительными, а фотографии уникальными, нам будет очень приятно, если вы учтете наши пожелания и, при выборе одежды, предпочтёте вечерние наряды в представленной ниже гамме.</p>
+            <div class="color-collage color-row fly-up" style="animation-delay:1s;">
+                <img src="80fd9e62-6e0d-4005-965a-39aa4f365788.jpg" alt="Темная ткань" class="collage-image">
+                <img src="a4034367-f2e9-471f-ad75-84d2ac720949.jpg" alt="Белая ткань" class="collage-image">
+                <img src="b7c76c04-688c-417e-944b-356b724e86d9.jpg" alt="Светлая ткань" class="collage-image">
+                <img src="e8ba427b-1067-444b-81e9-c6bcce4fc518.jpg" alt="Коричневая ткань" class="collage-image">
+            </div>
+        </section>
+
+        <!-- Gifts Section -->
+        <section class="gifts-section">
+            <h2 class="section-title">Подарки</h2>
+            <p class="section-text">Не ломайте голову над подарками! Лучший подарок молодой семье - в конверте обещаем найти ему самое лучшее применение.</p>
+            
+            <div class="gifts-icons">
+                <div class="gift-icon">
+                    <img src="https://images.icon-icons.com/494/PNG/512/envelope_icon-icons.com_48305.png" alt="Конверт" class="gift-icon-image" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3176/3176363.png'">
+                    <span class="icon-check">✓</span>
+                </div>
+                
+                <div class="gift-icon">
+                    <img src="https://images.icon-icons.com/4136/PNG/512/bouquet_flowers_romantic_love_valentine_icon_260801.png" alt="Цветы" class="gift-icon-image" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2933/2933245.png'">
+                    <span class="icon-cross">✗</span>
+                </div>
+                
+                <div class="gift-icon">
+                    <img src="https://images.icon-icons.com/1774/PNG/512/033champagne_114144.png" alt="Шампанское" class="gift-icon-image" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2933/2933245.png'">
+                    <span class="icon-check">✓</span>
+                </div>
+            </div>
+            
+            <p class="section-text">Пожалуйста, не дарите нам цветы. Если вы хотите сделать нам комплимент, мы будем рады бутылочке игристого, виски или мартини, которую вы можете украсить пожеланиями</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2 class="section-title">Контакты</h2>
+            <p class="section-text">По всем вопросам, связанным с трансфером, торжественным вечером и сюрпризами, просьба обращаться к свадебному организатору Арине:</p>
+            <p class="contact-phone">+7 (908) 250-97-39</p>
+        </section>
+
+        <!-- Children Section -->
+        <section class="children-section">
+            <h2 class="section-title">Важная информация</h2>
+            <p class="section-text">Обратите внимание, что выбранная нами площадка и формат мероприятия не предполагают детской зоны и аниматоров.</p>
+            <p class="section-text">Чтобы все мы могли по-настоящему оторваться на свадьбе, просим мам и пап оставить маленьких детей в надежных руках на день торжества, так как формат нашей свадьбы не предполагает развлечений для малышей.</p>
+        </section>
+
+        <section class="address-section fly-left" style="animation-delay:1.5s;">
+            <h2 class="address-title">Адрес</h2>
+            <div class="address-text">г. Пермь, 10/229, Банкетный зал</div>
+            <a href="https://yandex.ru/maps/-/CLHTJ2N6" target="_blank" class="map-button">Посмотреть на карте</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>С любовью, Василий и Светлана</p>
+        </footer>
+    </div>
+
+    <!-- RSVP Modal -->
+    <div class="modal-overlay" id="rsvpModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2 class="modal-title">Подтверждение присутствия</h2>
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="firstName">Имя *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Фамилия *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                
+                <div class="guests-container" id="guestsContainer">
+                    <div class="guest-item">
+                        <h3>Дополнительный гость</h3>
+                        <div class="form-group">
+                            <label>Имя</label>
+                            <input type="text" name="guestFirstName" class="guest-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Фамилия</label>
+                            <input type="text" name="guestLastName" class="guest-input">
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="add-guest-btn" id="addGuestBtn">+ Добавить гостя</button>
+                
+                <div class="form-group">
+                    <label for="alcohol">Выбор алкоголя *</label>
+                    <select id="alcohol" name="alcohol" required>
+                        <option value="">Выберите напиток</option>
+                        <option value="вино">Вино</option>
+                        <option value="водка">Водка</option>
+                        <option value="коньяк">Коньяк</option>
+                        <option value="виски">Виски</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-btn">Подтвердить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

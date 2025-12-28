@@ -1,0 +1,1600 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --beige: #F5E6D3;
+    --white: #FFFFFF;
+    --chocolate-black: #2C1810;
+    --light-beige: #FAF5ED;
+}
+
+
+body {
+    font-family: "Lobster", sans-serif;
+    color: var(--white); /* Изменено на белый */
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Great Vibes", cursive;
+    font-weight: bold;
+}
+
+/* Chocolate Silk GIF Background */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.silk-gif {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+.silk-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(44, 24, 16, 0.2) 0%,
+            transparent 20%,
+            transparent 80%,
+            rgba(44, 24, 16, 0.2) 100%
+        ),
+        radial-gradient(
+            circle at 20% 30%,
+            transparent 0%,
+            rgba(44, 24, 16, 0.25) 40%,
+            transparent 70%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            transparent 0%,
+            rgba(245, 230, 211, 0.12) 30%,
+            transparent 60%
+        );
+    mix-blend-mode: multiply;
+}
+
+.silk-shine {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.04) 50%,
+        transparent 100%
+    );
+    animation: shineMove 8s ease-in-out infinite;
+    opacity: 0.4;
+}
+
+@keyframes shineMove {
+    0%, 100% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.hero-photo {
+    position: relative;
+    margin: 40px auto;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.couple-photo {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.couple-photo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+}
+
+.photo-frame {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-content {
+    z-index: 1;
+    opacity: 1;
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 4.5rem; /* Увеличено с 3.5rem */
+    color: var(--white); /* Изменено на белый */
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Усилена тень для лучшей читаемости */
+}
+
+.hidden-text {
+    font-size: 0.4rem; /* Немного увеличено */
+    opacity: 0.3; /* Немного увеличена прозрачность */
+    margin-left: 5px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: var(--white); /* Добавлено для ясности */
+}
+
+.names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.bride-name {
+    font-size: 4rem; /* Увеличено с 3rem */
+    color: var(--white); /* Изменено на белый */
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Усилена тень */
+}
+
+.groom-name {
+    font-size: 4rem; /* Увеличено с 3rem */
+    color: var(--white); /* Изменено на белый */
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Усилена тень */
+}
+
+.and {
+    font-size: 3rem; /* Увеличено с 2rem */
+    color: var(--white); /* Изменено на белый */
+    font-style: italic;
+    opacity: 0.9; /* Увеличена прозрачность */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Усилена тень */
+}
+
+.date {
+    font-size: 2rem; /* Увеличено с 1.5rem */
+    color: var(--white); /* Изменено на белый */
+    margin-top: 30px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Усилена тень */
+}
+
+.invitation-text {
+    font-size: 1.5rem; /* Увеличено с 1.3rem */
+    color: var(--white); /* Изменено на белый */
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    padding: 0 20px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Усилена тень */
+}
+
+.invitation-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Countdown Timer */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.timer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    min-width: 100px;
+    transition: none;
+    border: none;
+}
+
+.timer-item:hover {
+    transform: none;
+    box-shadow: none;
+    background: none;
+}
+
+.timer-number {
+    font-size: 3rem; /* Увеличено с 2.5rem */
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.timer-label {
+    font-size: 1.1rem; /* Увеличено с 0.9rem */
+    color: var(--white);
+    opacity: 0.9;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.timer-separator {
+    font-size: 2.5rem; /* Увеличено с 2rem */
+    color: var(--white); /* Изменено на белый */
+    opacity: 0.8; /* Увеличена прозрачность */
+    font-weight: 300;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Усилена тень */
+}
+
+.decorative-line {
+    width: 200px;
+    height: 2px;
+    background: var(--white); /* Изменено на белый */
+    margin: 60px auto;
+    opacity: 0.5; /* Увеличена прозрачность */
+    animation: expandLine 1.5s ease-out 0.5s both;
+}
+
+/* Details Section */
+.big-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    box-shadow: none;
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.big-details .event-row {
+    font-size: 1.8rem;
+    color: var(--white);
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 25px 0;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background: none;
+    box-shadow: none;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.big-details .event-row:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.big-details .event-row:hover {
+    opacity: 0.9;
+}
+
+.big-details .event-time {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--white);
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.big-details .event-label {
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: normal;
+    opacity: 0.95;
+    letter-spacing: 1.2px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Анимации появления текста */
+.fly-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: flyLeftIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.fly-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: flyRightIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.fly-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: flyUpIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.fly-down {
+    opacity: 0;
+    transform: translateY(-40px);
+    animation: flyDownIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes flyLeftIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes flyRightIn {
+    from { opacity: 0; transform: translateX(50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes flyUpIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes flyDownIn {
+    from { opacity: 0; transform: translateY(-40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+/* Details Section */
+.details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding:  0 auto;
+    margin: 0 auto;
+}
+
+.detail-card {
+    background: rgba(255, 255, 255, 0.9); /* Сделано более непрозрачным */
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(44, 24, 16, 0.1);
+    text-align: center;
+    transition: transform 0.8s ease, box-shadow 0.3s ease, opacity 0.8s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.detail-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.detail-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.detail-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(44, 24, 16, 0.15);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.card-title {
+    font-size: 2.2rem; /* Увеличено с 1.8rem */
+    color: var(--chocolate-black); /* Оставлен темный цвет для контраста */
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.card-time {
+    font-size: 1.8rem; /* Увеличено с 1.5rem */
+    color: var(--chocolate-black); /* Оставлен темный цвет для контраста */
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.card-location {
+    font-size: 1.5rem; /* Увеличено с 1.2rem */
+    color: var(--chocolate-black); /* Оставлен темный цвет для контраста */
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.card-address {
+    font-size: 1.2rem; /* Увеличено с 1rem */
+    color: var(--chocolate-black); /* Оставлен темный цвет для контраста */
+    opacity: 0.8; /* Увеличена прозрачность */
+    margin-top: 10px;
+    line-height: 1.8;
+}
+
+/* Quote Section */
+.quote-section {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 60px auto;
+}
+
+.quote {
+    font-size: 1.5rem; /* Увеличено с 1.3rem */
+    font-style: italic;
+    color: var(--white); /* Изменено на белый */
+    font-weight: normal;
+    line-height: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    padding: 0 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Усилена тень */
+}
+
+.quote.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quote::before,
+.quote::after {
+    content: '"';
+    font-size: 4.5rem; /* Увеличено с 4rem */
+    color: var(--white); /* Изменено на белый */
+    opacity: 0.3; /* Увеличена прозрачность */
+    position: absolute;
+}
+
+.quote::before {
+    left: -20px;
+    top: -20px;
+}
+
+.quote::after {
+    right: -20px;
+    bottom: -40px;
+}
+
+/* RSVP Section */
+.rsvp-section {
+    text-align: center;
+    padding: 60px 20px;
+    margin: 60px auto;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    max-width: 100%;
+}
+
+.rsvp-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+.rsvp-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rsvp-section::before,
+.rsvp-section::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--white), transparent); /* Изменено на белый */
+    opacity: 0.5; /* Увеличена прозрачность */
+}
+
+.rsvp-section::before {
+    top: 0;
+}
+
+.rsvp-section::after {
+    bottom: 0;
+}
+
+.rsvp-decoration-left,
+.rsvp-decoration-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem; /* Увеличено с 2rem */
+    color: var(--white); /* Изменено на белый */
+    opacity: 0.3; /* Увеличена прозрачность */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Усилена тень */
+    z-index: 0;
+}
+
+.rsvp-decoration-left {
+    left: 10%;
+}
+
+.rsvp-decoration-right {
+    right: 10%;
+}
+
+.rsvp-title {
+    font-size: 2.2rem;
+    color: var(--white); /* Изменено на белый */
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s, transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Усилена тень */
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+}
+
+.rsvp-section.visible .rsvp-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rsvp-text {
+    font-size: 1.4rem; /* Увеличено с 1.2rem */
+    color: var(--white); /* Изменено на белый */
+    font-weight: normal;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s, transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Усилена тень */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+.rsvp-section.visible .rsvp-text {
+    opacity: 0.9; /* Увеличена прозрачность */
+    transform: translateY(0);
+}
+
+
+/* Dress Code Section */
+.dresscode-section {
+    text-align: center;
+    padding: 60px 20px;
+    margin: 60px auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    max-width: 100%;
+}
+
+.dresscode-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dresscode-title {
+    font-size: 3rem; /* Увеличено с 2.5rem */
+    color: var(--white); /* Изменено на белый */
+    margin-bottom: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dresscode-section.visible .dresscode-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dresscode-text {
+    font-size: 1.4rem; /* Увеличено с 1.2rem */
+    color: var(--white); /* Изменено на белый */
+    font-weight: normal;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    opacity: 0.9;
+    padding: 0 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Усилена тень */
+}
+
+.color-collage.color-row {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    margin: 35px auto;
+    max-width: 100%;
+}
+
+.color-row .collage-image, .color-row > img {
+    width: min(140px,20vw);
+    height: min(140px,20vw);
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+    transition: transform 0.3s;
+}
+.color-row .collage-image:hover, .color-row > img:hover {
+    transform: scale(1.07);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+}
+.color-collage {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    position: relative;
+}
+
+.collage-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* Изменен цвет тени */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.9); /* Сделано более непрозрачным */
+    backdrop-filter: blur(5px);
+}
+
+.collage-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Изменен цвет тени */
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.collage-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Gifts Section */
+.gifts-section,
+.contact-section,
+.children-section {
+    text-align: center;
+    padding: 60px 20px;
+    margin: 60px auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    max-width: 100%;
+}
+
+.gifts-section.visible,
+.contact-section.visible,
+.children-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-size: 3rem; /* Увеличено с 2.5rem */
+    color: var(--white); /* Изменено на белый */
+    margin-bottom: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gifts-section.visible .section-title,
+.contact-section.visible .section-title,
+.children-section.visible .section-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-text {
+    font-size: 1.4rem; /* Увеличено с 1.2rem */
+    color: var(--white); /* Изменено на белый */
+    font-weight: normal;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    opacity: 0.9;
+    padding: 0 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Усилена тень */
+}
+
+/* Gifts Icons */
+.gifts-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 40px auto;
+    flex-wrap: wrap;
+    max-width: 800px;
+}
+
+.gift-icon {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gift-icon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.gift-icon .icon-check {
+    position: absolute;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #F5E6D3;
+    bottom: -10px;
+    right: -10px;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1;
+}
+
+.gift-icon .icon-cross {
+    position: absolute;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #8B6F47;
+    bottom: -10px;
+    right: -10px;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1;
+    transform: rotate(45deg);
+}
+
+.contact-phone {
+    font-size: 1.8rem; /* Увеличено с 1.5rem */
+    color: var(--white); /* Изменено на белый */
+    font-weight: normal;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Усилена тень */
+}
+
+.address-section {
+    text-align: center;
+    margin: 60px auto;
+    padding: 60px 20px;
+    font-size: 1.7rem;
+    color: var(--white);
+    max-width: 100%;
+}
+.address-title {
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 14px;
+    letter-spacing: 1.7px;
+    color: var(--white);
+}
+.address-text {
+    font-size: 1.2em;
+    color: var(--white);
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 1.9;
+    margin-top: 8px;
+    margin-bottom: 25px;
+    opacity: 0.96;
+}
+
+.map-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: normal;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    margin-top: 15px;
+}
+
+.map-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--white); /* Изменено на белый */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.footer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer p {
+    font-size: 1.4rem; /* Увеличено с 1.2rem */
+    font-weight: 500;
+    margin-bottom: 20px;
+    opacity: 0.9; /* Увеличена прозрачность */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Усилена тень */
+}
+
+.hearts {
+    font-size: 1.8rem; /* Увеличено с 1.5rem */
+    animation: heartbeat 1.5s ease-in-out infinite;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Усилена тень */
+}
+
+/* Modal Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 24, 16, 0.9);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--chocolate-black);
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+}
+
+.modal-title {
+    font-size: 2.5rem;
+    color: var(--chocolate-black);
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#rsvpForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--chocolate-black);
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 15px;
+    border: 2px solid var(--chocolate-black);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--chocolate-black);
+    background: var(--white);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--beige);
+    box-shadow: 0 0 0 3px rgba(245, 230, 211, 0.3);
+}
+
+.guests-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.guest-item {
+    padding: 20px;
+    background: var(--light-beige);
+    border-radius: 10px;
+    border: 1px solid var(--beige);
+}
+
+.guest-item h3 {
+    font-size: 1.3rem;
+    color: var(--chocolate-black);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.add-guest-btn {
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px dashed var(--chocolate-black);
+    border-radius: 8px;
+    color: var(--chocolate-black);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-guest-btn:hover {
+    background: var(--beige);
+    border-style: solid;
+}
+
+.submit-btn,
+.rsvp-button {
+    padding: 15px 40px;
+    background: var(--chocolate-black);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(44, 24, 16, 0.3);
+    font-family: "Lobster", sans-serif;
+}
+
+.submit-btn:hover,
+.rsvp-button:hover {
+    background: rgba(44, 24, 16, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(44, 24, 16, 0.4);
+}
+
+.submit-btn:active,
+.rsvp-button:active {
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in-delay {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInQuote {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes expandLine {
+    from {
+        width: 0;
+    }
+    to {
+        width: 200px;
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.fade-in {
+    animation: fade-in 1.5s ease-out;
+}
+
+.slide-in {
+    animation: slide-in 1.5s ease-out 0.3s both;
+}
+
+.fade-in-delay {
+    animation: fade-in-delay 2s ease-out;
+}
+
+.fade-in-quote {
+    animation: fadeInQuote 1.5s ease-out 0.5s forwards;
+}
+
+/* Floating animation for names */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.bride-name {
+    animation: slideInLeft 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards, float 4s ease-in-out 1.5s infinite;
+}
+
+.groom-name {
+    animation: slideInLeft 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards, float 4s ease-in-out 1.7s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .hero {
+        padding: 60px 15px;
+    }
+    
+    .hero h1 {
+        font-size: 4rem; /* Увеличено с 3rem */
+    }
+    
+    .rsvp-decoration-left,
+    .rsvp-decoration-right {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3.5rem; /* Увеличено с 2.5rem */
+        letter-spacing: 2px;
+    }
+    
+    .bride-name,
+    .groom-name {
+        font-size: 3rem; /* Увеличено с 2rem */
+    }
+    
+    .names {
+        gap: 15px;
+        flex-direction: column;
+    }
+    
+    .and {
+        font-size: 2.5rem; /* Увеличено с 1.5rem */
+    }
+    
+    .invitation-text {
+        font-size: 1.4rem; /* Увеличено с 1.1rem */
+        padding: 0 15px;
+        margin-top: 30px;
+    }
+    
+    .countdown-timer {
+        gap: 8px;
+        margin: 30px 0;
+    }
+    
+    .timer-item {
+        min-width: 70px;
+        padding: 0;
+    }
+    
+    .timer-number {
+        font-size: 2.3rem; /* Увеличено с 1.8rem */
+    }
+    
+    .timer-label {
+        font-size: 1rem; /* Увеличено с 0.75rem */
+    }
+    
+    .timer-separator {
+        font-size: 2rem; /* Увеличено с 1.3rem */
+    }
+    
+    .details {
+        grid-template-columns: 1fr;
+        padding: 40px 15px;
+        gap: 25px;
+    }
+    
+    .big-details {
+        padding: 40px 15px;
+        max-width: 100%;
+    }
+    
+    .big-details .event-row {
+        font-size: 1.5rem;
+        gap: 25px;
+        padding: 20px 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .big-details .event-time {
+        font-size: 1.5rem;
+        min-width: auto;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    
+    .big-details .event-label {
+        font-size: 1.3rem;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .big-details .event-row:not(:last-child)::after {
+        width: 100px;
+    }
+    
+    .detail-card {
+        padding: 35px 25px; /* Увеличено */
+    }
+    
+    .card-title {
+        font-size: 2rem; /* Увеличено с 1.5rem */
+    }
+    
+    .card-time {
+        font-size: 1.8rem; /* Увеличено с 1.3rem */
+    }
+    
+    .quote {
+        font-size: 1.4rem; /* Увеличено с 1.1rem */
+        padding: 0 15px;
+    }
+    
+    .quote-section {
+        padding: 60px 15px;
+    }
+    
+    .rsvp-section {
+        padding: 60px 15px;
+        margin: 40px 10px;
+    }
+    
+    .rsvp-title {
+        font-size: 2rem;
+    }
+    
+    .rsvp-text {
+        font-size: 1.4rem; /* Увеличено с 1.1rem */
+    }
+    
+    .footer {
+        padding: 40px 15px;
+    }
+    
+.dresscode-section {
+    padding: 60px 15px;
+    margin: 60px auto;
+}
+    
+    .dresscode-title {
+        font-size: 2.8rem; /* Увеличено с 2rem */
+    }
+    
+    .dresscode-text {
+        font-size: 1.4rem; /* Увеличено с 1.1rem */
+        padding: 0 15px;
+    }
+    
+    .collage-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .gifts-section,
+    .contact-section,
+    .children-section {
+        padding: 60px 15px;
+    }
+    
+    .gifts-icons {
+        gap: 30px;
+        margin: 40px auto;
+    }
+    
+    .gift-icon {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .gift-icon .icon-check,
+    .gift-icon .icon-cross {
+        font-size: 3rem;
+    }
+    
+    .gifts-icons {
+        gap: 30px;
+        margin: 40px auto;
+    }
+    
+    .gift-icon {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .gift-icon .icon-check,
+    .gift-icon .icon-cross {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.8rem; /* Увеличено с 2rem */
+    }
+    
+    .section-text {
+        font-size: 1.4rem; /* Увеличено с 1.1rem */
+        padding: 0 15px;
+    }
+    
+    .contact-phone {
+        font-size: 1.8rem; /* Увеличено с 1.3rem */
+    }
+    
+    .map-button {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+    
+    .gifts-icons {
+        gap: 20px;
+        margin: 30px auto;
+    }
+    
+    .gift-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .gift-icon .icon-check,
+    .gift-icon .icon-cross {
+        font-size: 2.5rem;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .couple-photo {
+        width: 250px;
+        height: 320px;
+    }
+    
+    .photo-frame {
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+    }
+    
+    .hero h1 {
+        font-size: 3rem; /* Увеличено с 2rem */
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+    }
+    
+    .bride-name,
+    .groom-name {
+        font-size: 2.5rem; /* Увеличено с 1.8rem */
+    }
+    
+    .countdown-timer {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+    
+    .timer-item {
+        min-width: 65px;
+        padding: 0;
+    }
+    
+    .timer-number {
+        font-size: 2rem; /* Увеличено с 1.5rem */
+    }
+    
+    .timer-label {
+        font-size: 0.9rem; /* Увеличено с 0.7rem */
+    }
+    
+    .timer-separator {
+        font-size: 1.8rem; /* Увеличено с 1.1rem */
+    }
+    
+    .invitation-text {
+        font-size: 1.3rem; /* Увеличено с 1rem */
+        line-height: 1.6;
+    }
+    
+    .detail-card {
+        padding: 30px 20px; /* Увеличено */
+    }
+    
+    .card-title {
+        font-size: 1.8rem; /* Увеличено с 1.3rem */
+    }
+    
+    .card-time {
+        font-size: 1.6rem; /* Увеличено с 1.2rem */
+    }
+    
+    .card-location {
+        font-size: 1.4rem; /* Увеличено с 1.1rem */
+    }
+    
+    .card-address {
+        font-size: 1.1rem; /* Увеличено с 0.9rem */
+    }
+    
+    .quote {
+        font-size: 1.3rem; /* Увеличено с 1rem */
+        line-height: 1.8;
+    }
+    
+    .rsvp-title {
+        font-size: 1.8rem;
+    }
+    
+    .rsvp-text {
+        font-size: 1.3rem; /* Увеличено с 1rem */
+    }
+    
+    .footer p {
+        font-size: 1.3rem; /* Увеличено с 1rem */
+    }
+    
+    .dresscode-title {
+        font-size: 2.5rem; /* Увеличено с 1.8rem */
+    }
+    
+    .dresscode-text {
+        font-size: 1.3rem; /* Увеличено с 1rem */
+        margin-bottom: 40px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem; /* Увеличено с 1.8rem */
+    }
+    
+    .section-text {
+        font-size: 1.3rem; /* Увеличено с 1rem */
+    }
+    
+    .contact-phone {
+        font-size: 1.6rem; /* Увеличено с 1.2rem */
+    }
+}
+
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 2.5rem; /* Увеличено с 1.8rem */
+    }
+    
+    .bride-name,
+    .groom-name {
+        font-size: 2.2rem; /* Увеличено с 1.5rem */
+    }
+    
+    .timer-item {
+        min-width: 60px;
+        padding: 0;
+    }
+    
+    .timer-number {
+        font-size: 1.8rem; /* Увеличено с 1.3rem */
+    }
+    
+    .timer-label {
+        font-size: 0.8rem; /* Увеличено с 0.65rem */
+    }
+    .color-collage.color-row {
+        gap: 0;
+    }
+}
