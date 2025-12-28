@@ -460,7 +460,7 @@ if (rsvpForm) {
             // Send to Google Sheets via Google Apps Script
             // ВАЖНО: Сначала настройте Google Apps Script (инструкции в комментариях выше)
             // и замените 'YOUR_GOOGLE_SCRIPT_URL' на URL вашего веб-приложения
-            if (GOOGLE_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbyaxxTSGfZRiomgBS_LzCtm-95oLXHvWPJZH1fd6aWPmI6258iU9OXNjS_SMp9NllFkSA/exec') {
+            if (GOOGLE_SCRIPT_URL === '') {
                 alert('Пожалуйста, настройте Google Sheets интеграцию. Смотрите инструкции в коде.');
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
